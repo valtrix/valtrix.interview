@@ -1,0 +1,50 @@
+--------------------
+Problem
+--------------------
+
+The functional definition of a CPU is provided below. You need to develop a simulator for the CPU and execute a stream of instructions given as an input to your program.
+
+--------------------
+Functional Definition
+--------------------
+
+The functional definition of the CPU is as follows -
+It has 8 64-bit general purpose registers (x0-x7)
+It supports the following instructions
+ADD reg1, reg2, reg3: Adds the contents of reg2 and reg3 and moves it to reg1.
+SUB reg1, reg2, reg3: Subtracts the contents of reg3 from reg2 and moves it to reg1. 
+MUL reg1, reg2, reg3: Multiplies the contents of reg2 and reg3 and moves it to reg1. 
+DIV reg1, reg2, reg3: Divides the contents of reg2 by that of reg3 and moves the quotient to reg3. In case of a divide by zero, move -1 to the destination register.
+BEQ reg1, reg2, x: In case reg1 and reg2 are equal, jump to the label x defined in the input file
+BNE reg1, reg2, x: In case reg1 and reg2 are not equal, jump to the label x defined in the input file
+All the operations ignore overflows and underflows but must support handling of signed numbers. The most significant bit of the register is the signed bit
+
+--------------------
+Input
+--------------------
+
+The initial values (in hexadecimal) of all the registers will be given in the following format in a file called regs.txt
+x0 0xDEADBEEF12345678
+x1 0x1122334455667788
+. . .
+. . .
+x7 0x0
+
+Another file called instructions.txt will have a random stream of operations defined in it.
+ADD x0, x2, x3
+MUL x3, x3, x2
+label_x:
+DIV x7, x4, x3
+ADD x7, x6, x3
+BNE x1, x7 label_x
+BEQ x2, x3, label_y
+label_y:
+ADD x2, x3, x3
+
+The number of instructions will be between 100-1000.
+
+--------------------
+Program
+--------------------
+
+Your program has to process the two input files and print the output of the final contents of the register set (x0-x7). You can use C, C++ or Python to develop the program.

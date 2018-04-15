@@ -1,0 +1,4 @@
+my_label:
+ADD x0, x0, x0
+MUL x7, x7, x7
+BNE x0, x1, my_label
