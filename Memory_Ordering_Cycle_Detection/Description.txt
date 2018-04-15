@@ -1,0 +1,60 @@
+--------------------
+Problem
+--------------------
+
+Cycle detection in observed data from a stream of random instructions
+
+--------------------
+Description
+--------------------
+
+This is a classic problem related to ordering of memory operations (CPU instructions that access memory locations) in a multi processor architecture. You will receive a random stream of operations on all CPUs, the data written by all the store (memory write) operations and the data read by all the load (memory read) operations as an input to your program. You need to create an observability graph from this information and detect if there are any cycles or not. Observability graph is a data structure that records the global sequence of memory operations. For example, if a CPU thread 0 wrote a value of X to an address A using a store operation and CPU thread 1 read the same value from address a using a load operation, the observability graph will consist of a directed edge from the node representing store operation on thread 0 to the node representing load operation on thread 1.
+
+--------------------
+Input
+--------------------
+
+The test case will comprise of <N> files containing the information of memory operations which have executed on each CPU
+Each file will have up to <M> lines
+
+Each line will be in the following format
+<ID> <OPERATION> <DATA>
+
+<ID> will be the index of the operation in the stream
+<OPERATION> can be one of LOAD or STORE
+<DATA> will be a 4 byte number
+
+Two restrictions are applicable while creating the test case
+1. Make sure that <DATA> specified with all the STORE operations are unique
+2. <DATA> specified with the LOAD operations has to be one of the values specified with one of the STORE operations
+
+The input file will look like this
+.....
+.....
+8  LOAD  0x22334455
+9  STORE 0xFFFFAAAA
+10 LOAD  0xAAAACCCC
+11 LOAD  0xFFFFAAAA
+.....
+.....
+
+Restrictions
+2 <= N <= 8
+8 <= M <= 256
+
+--------------------
+Program
+--------------------
+
+The program needs to create an observability graph from the input. The graph will be directed in nature
+Each line will be a node in the observability graph
+Edges need to be connected between the graphs based on the following rules -
+
+1) Since the operations from the same CPU are executed in-order, lines from the same file will be adjacent nodes in the graph. For example, node corresponding to line number 100 will have a directed edge from node corresponding to line number 99. The edges formed using this rule are called direct edges.
+2) In case the <DATA> belonging to one of the LOAD operations is matching with another STORE operation (from any of the files), we need to create a directed edge from the STORE to the LOAD node. The edges formed using this rule are called observed edges.
+3) In case an observed edge is formed from a STORE on CPU x to a LOAD on CPU y, edges from the STORE on CPU x to all the operations that occur after the LOAD on CPU y need to be created. Also edges from the LOAD on CPU y to all the later STORE operations on CPU x need to be created. The edges formed using this rule are called inferred edges.
+
+Once the graph is constructed, it needs to be analyzed for cycles. The program needs to print all the cycles that it finds in the test case.
+
+The output must list all the nodes in the cycle separated by the edges formed during the analysis. The direct, observed and inferred edges needs to be printed using ->, => and ~> symbols
+
