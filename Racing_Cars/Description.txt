@@ -1,0 +1,29 @@
+--------------------
+Problem
+--------------------
+
+Develop a program which will simulate <N> racing cars on console
+
+--------------------
+Description
+--------------------
+
+The racing cars are represented by a '>' character. Every time a car covers a single unit of distance a '=' character is printed and the symbol representing the car is advanced in its path. For example, a car which has covered 10 units of distance will be represented by this string -
+
+[CAR 1] ==========>
+
+The program will involve simulation of <N> racing cars trying to cover <M> units of distance. Each car will have a prefix which identifies it uniquely. For example, a possible arrangement of 5 racing cars in the middle of simulation will look like this -
+
+[CAR 1] ====>
+[CAR 2] ==========>
+[CAR 3] =======>
+[CAR 4] =========>
+[CAR 5] ============>
+
+By default, all the cars will cover a single unit of distance in 1 second. In case the numeric key corresponding to the car's identifier is pressed on keyboard, the speed of the car is supposed to double. For example, if the key <2> is pressed on keyboard twice after the start of the race, the second car will start covering 4 units of distance in 1 second.
+
+Whichever car completes <M> units of distance in the least possible time will be declared the winner of the race
+
+
+1 <= N <= 9
+1 <= M <= 100
