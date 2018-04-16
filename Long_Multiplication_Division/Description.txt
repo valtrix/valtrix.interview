@@ -13,6 +13,8 @@ The test case will comprise of an input file which contains two <M> and <N> digi
 100 <= M <= 500
 100 <= N <= 500
 
+Note that the test case given in this directory is for integer multiplication operation.
+
 --------------------
 Program
 --------------------
