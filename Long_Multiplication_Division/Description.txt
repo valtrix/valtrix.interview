@@ -8,7 +8,7 @@ Develop program which can carry out integer multiplication and division on arbit
 Input
 --------------------
 
-The test case will comprise of an input file which contains two <M> and <N> digit operands in separate lines. In case of integer multiplication, the first and second numbers are interpreted as multiplicand and multiplier respectively. In case of integer division, the first number is the dividend whereas the second is the divisor.
+The test case will comprise of an input file which contains two <M> and <N> digit operands/numbers in separate lines. In case of integer multiplication, the first and second numbers are interpreted as multiplicand and multiplier respectively. In case of integer division, the first number is the dividend whereas the second is the divisor.
 
 100 <= M <= 500
 100 <= N <= 500
