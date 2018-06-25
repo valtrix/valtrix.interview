@@ -21,4 +21,4 @@ Program
 
 Your program has to process the input file and print the result from the integer multiplication or division of the operands.
 
-Make sure that the program is developed in C/C++
+Make sure that the program is developed in C/C++. It also should not use any STL/external libraries.

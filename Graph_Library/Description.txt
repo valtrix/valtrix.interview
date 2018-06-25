@@ -1,0 +1,47 @@
+--------------------
+Problem
+--------------------
+
+Develop a program which processes a sequence of command operations on a graph. You are required to create and maintain a class for the Graph data structure with appropriate APIs defined which allow these commands to be easily implemented.
+
+--------------------
+Input
+--------------------
+
+The test case will comprise of an input file which defines a sequence of command operations on a graph. The high level description of each command is given below:
+
++--------------------+----------------------------------------------------------------------+
+| CREATE_GRAPH       | This command creates the graph object. It takes an ID which uniquely |
+|                    | identifies the graph. An additional argument can also be passed to   |
+|                    | this command. It can be set to DIR/UNDIR which will determine if the |
+|                    | graph is directed or not. Every sequence of commands must start with |
+|                    | a CREATE_GRAPH command.                                              |
++--------------------+----------------------------------------------------------------------+
+| CREATE_NODE        | This command creates a node in the graph. It takes an ID which       |
+|                    | uniquely identifies the node. In case a node is created with an      |
+|                    | existing ID, the program should report an error.                     |
++--------------------+----------------------------------------------------------------------+
+| CONNECT_NODES      | This command will add an [directed/undirected] edge from the first   |
+|                    | node to the second node in the graph. In case an edge already exists |
+|                    | between the two nodes, the program should report an error. Note that |
+|                    | a directed edge from node X to Y is not same as a directed edge from |
+|                    | Y to X.                                                              |
++--------------------+----------------------------------------------------------------------+
+| DELETE_NODE        | This command will delete a node with a matching ID and all the edges |
+|                    | associated with this particular node.                                |
++--------------------+----------------------------------------------------------------------+
+| PRINT_GRAPH        | Prints the adjacency matrix representing this graph.                 |
++--------------------+----------------------------------------------------------------------+
+| DETECT_CYCLES      | Detects if the graph contains any cycles and prints the nodes which  |
+|                    | are connected to each other in the cycle.                            |
++--------------------+----------------------------------------------------------------------+
+
+Note that the number of operations in the sequence will be less than 1000
+
+--------------------
+Program
+--------------------
+
+Your program has to create and maintain the graph object according to the operations listed in the sequence. It should print the adjacency matrix and cycles present in the graph in response to the PRINT_GRAPH and DETECT_CYCLES commands. The format of the results can be found in the sample output file.
+
+Make sure that the program is developed in C/C++. It also should not use any STL or external libraries like Boost.

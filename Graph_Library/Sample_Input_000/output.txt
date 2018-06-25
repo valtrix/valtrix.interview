@@ -1,0 +1,19 @@
+    ABC XYZ PQR LMN DEF ZZZ XXX
+ABC 1   1   0   0   0   0   0
+XYZ 0   0   1   0   0   0   0
+PQR 0   0   0   0   1   0   0
+LMN 0   1   0   0   0   0   0
+DEF 0   0   0   1   0   0   0
+ZZZ 0   0   0   0   1   0   0
+XXX 0   1   0   0   0   0   0
+
+Number of cycles detected: 2
+Cycle 1: ABC -> ABC
+Cycle 2: DEF -> LMN -> XYZ -> PQR -> DEF
+
+    XYZ PQR DEF ZZZ XXX
+XYZ 0   1   0   0   0
+PQR 0   0   1   0   0
+DEF 0   0   0   0   0
+ZZZ 0   0   1   0   0
+XXX 1   0   0   0   0
